@@ -4,6 +4,20 @@
 
 
 /*============================*/
+/*  Catch promise Errors
+/*============================*/
+
+var p = new Promise((resolve, reject) => {
+   setTimeout(() => {
+     // Error permet d'indiquer la ligne de l'erreur exact
+     reject(Error("Une erreur a été detectée"))
+   }, 1000)
+})
+
+p.then(data => console.log(data)).catch(e => console.log(e))
+
+
+/*============================*/
 /*  Array.findIndex()
 /*============================*/
 var comments = [
